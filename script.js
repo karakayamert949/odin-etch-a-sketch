@@ -1,9 +1,18 @@
-let container = document.querySelector('.container');
+const container = document.querySelector('.squareContainer');
+const btn = document.querySelector('.btn');
 
-for (let i=0;i<256;i++){
+let gridNum = 16;
+
+btn.addEventListener('click',()=>{
+    let gridNum=prompt('How many squares per row you want?');
+})
+
+for (let i=0;i<gridNum**2;i++){
     let cell = document.createElement('div');
     cell.setAttribute('class','cell');
-    cell.addEventListener('mouseover',()=>{cell.style.cssText = 'background-color: red;'});
+    cell.style.width = `${100/gridNum}%`;
+    cell.style.height = `${100/gridNum}%`;
+    cell.addEventListener('mouseover',()=>{cell.style.backgroundColor = 'red'});
     container.appendChild(cell);
 }
 
