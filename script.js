@@ -23,7 +23,11 @@ function makeGrid(gridNum) {
         cell.setAttribute('class', 'cell');
         cell.style.width = `${100 / gridNum}%`;
         cell.style.height = `${100 / gridNum}%`;
-        cell.addEventListener('mouseover', () => { cell.style.backgroundColor = 'red' });
+        cell.addEventListener('mouseover', () => { 
+            randR=Math.random()*255;
+            randG=Math.random()*255;
+            randB=Math.random()*255;
+            cell.style.backgroundColor = `rgb(${randR},${randG},${randB})` });
         container.appendChild(cell);
     }
 }
